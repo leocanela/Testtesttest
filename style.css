@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.cont {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  top: 10%;
+  border-collapse: separate;
+  border-radius: 52px;
+}
+
+h1 {
+  background: #C2D3E3;
+}
+
+.ptp {
+  background: #D1E2F1;
+}
+
+.unstyled {
+  padding: 8px;
+  list-style-type: none;
+}
+
+li {
+  padding: 4px;
+}
+
+.result {
+  position: relative;
+  bottom: 0px;
+  text-align: center;
+  border-top: 1px black solid;
+  padding: 3px;
+  background: #C2D3E3;
+}
+
+.content {
+  background: #ddd;
+}
