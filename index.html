@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.7.0/css/onsen-css-components.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.7.0/css/onsenui.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
@@ -11,7 +12,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
 
 </head>
-<body>
+<body style="background-color: #dddddd">
 <ons-navigator swipeable var="myNavigator" page="page1.html"></ons-navigator>
 <template id="page1.html">
   <ons-page>
@@ -37,8 +38,8 @@
 
     </ons-card>
     <ons-card ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">
-    	<div class="title">ITU</div>
-    	<div class="content">Diagnóstico clínico de ITU</div>
+    	<div class="title">MEU AMOR</div>
+    	<div class="content">VOCÊ É MUITO LINDA E EU AMO MUITO VOCÊ</div>
     </ons-card>
     <ons-card ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">
     	<div class="title">ITU</div>
