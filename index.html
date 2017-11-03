@@ -1,117 +1,88 @@
-
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.7.0/css/onsen-css-components.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.7.0/css/onsenui.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.7.0/js/onsenui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.7.0/js/angular-onsenui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+	<head>
+<!-- WebApp no iOS -->
+		<title>Leaf LR v0.1</title>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="apple-touch-icon" href="/notes.png">
+<!-- Dependências -->
+		<link rel="stylesheet" href="css/onsen-css-components.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.7.0/css/onsenui.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.7.0/css/ionicons/css/ionicons.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/onsenui.min.js"></script>
+		<script src="js/angular-onsenui.min.js"></script>
+		<script src="js/angular-route.min.js"></script>
 
-</head>
-<body style="background-color: #dddddd">
-<ons-navigator swipeable var="myNavigator" page="page1.html"></ons-navigator>
-<template id="page1.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="center">Leaf LR</div>
-      <div class="right">
-      	<div style="padding-top: 0.3em">
-        <ons-toolbar-button ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">
-          <ons-icon icon="ion-ios-information-outline, material:md-info"></ons-icon>
-        </ons-toolbar-button>
-      </div></div>
-    </ons-toolbar>
+	</head>
 
-    <p>This is the first page.</p>
-
-    <ons-card ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">
-    	<div class="title">ITU</div>
-    	<div class="content">Diagnóstico clínico de ITU</div>
-    </ons-card>
-      <ons-card ng-click="myNavigator.pushPage('enxaqueca.html', {data: {title: 'Enxaqueca'}})">
-    	<div class="title">Enxaqueca</div>
-    	<div class="content">Diferencie enxaqueca de outras cefaléias</div>
-
-    </ons-card>
-    <ons-card ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">
-    	<div class="title">MEU AMOR</div>
-    	<div class="content">VOCÊ É MUITO LINDA E EU AMO MUITO VOCÊ</div>
-    </ons-card>
-    <ons-card ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">
-    	<div class="title">ITU</div>
-    	<div class="content">Diagnóstico clínico de ITU</div>
-    </ons-card>
-    <ons-card ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">
-    	<div class="title">ITU</div>
-    	<div class="content">Diagnóstico clínico de ITU</div>
-    </ons-card>
-    <ons-card ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">
-    	<div class="title">ITU</div>
-    	<div class="content">Diagnóstico clínico de ITU</div>
-    </ons-card>
-    <ons-card ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">
-    	<div class="title">ITU</div>
-    	<div class="content">Diagnóstico clínico de ITU</div>
-    </ons-card>
-    <ons-card ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">
-    	<div class="title">ITU</div>
-    	<div class="content">Diagnóstico clínico de ITU</div>
-    </ons-card>
-    <ons-card ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">
-    	<div class="title">ITU</div>
-    	<div class="content">Diagnóstico clínico de ITU</div>
-    </ons-card>
-  </ons-page>
-</template>
-
-<template id="page2.html">
-  <ons-page ng-controller="Page2Controller as page2" ons-init="page2.init($event)">
-    <ons-toolbar>
-      <div class="left"><ons-back-button>Page 1</ons-back-button></div>
-      <div class="center">{{ myNavigator.topPage.data.title }}</div>
-    </ons-toolbar>
-
-    <p>This is the second page.</p>
-     <ons-button ng-click="myNavigator.pushPage('enxaqueca.html', {data: {title: 'Enxaqueca'}})">Push page 3</ons-button>
-  </ons-page>
-</template>
-
-<template id="enxaqueca.html">
-  <ons-page ng-controller="Page2Controller as page3" ons-init="page2.init($event)">
-    <ons-toolbar>
-      <div class="left"><ons-back-button>Page 1</ons-back-button></div>
-      <div class="center">{{ myNavigator.topPage.data.title }}</div>
-    </ons-toolbar>
-    <div class="cont">
-      <h1>{{dados.title}}</h1>
-      <div class="content">
-        <div class='ptp'>Probabilidade Pré-Teste: {{dados.pretest*100}}%</div>
-    <ons-list>
-    <ons-list-header>Settings</ons-list-header>
-    <ons-list-item ng-repeat="todo in todos">
-   <label for="check-{{todo}}" class="center "><div>{{todo.text}} (LR = {{todo.lplus}})</div></label>
-      <div class="right"><ons-switch input-id="check-{{todo}}" ng-model="todo.done"></ons-switch></div> 
-  	
-    </ons-list-item>
-        
-        <div class="result">
-          <span>LR+ Total: {{ getTotal() }}</span>
-          <br>
-          <span>Probabilidade Pós-teste: {{ getPost() }}%</span>
-        </div>
-
-  </ons-list>
-      </div>
-</ons-page>
-</template>
-
-  <script src="app.js"></script>
-</body>
-</html>
-
-
+	<body ng-controller="appController">
+<!-- Página principal -->
+	<ons-navigator swipeable var="nav" page="main.html"></ons-navigator>
+	<template id="main.html">
+		<ons-page>
+			<!-- Barra do topo -->
+			<ons-toolbar style="">
+				<div class="center"><i class="fa fa-leaf" style="color: #32b72f; font-size: 1.5em" aria-hidden="true"></i>  Leaf LR</div>
+      			<div class="right">
+					<ons-toolbar-button ng-click="nav.pushPage('info.html', {data: {title: 'Informações'}})">
+          			<ons-icon icon="ion-ios-information-outline, material:md-info"></ons-icon>
+          			</ons-toolbar-button>
+          		</div>
+			</ons-toolbar>
+			<!-- Lista de doenças -->
+			<ons-card ng-click="nav.pushPage('enxaqueca.html', {data: {title: 'Enxaqueca'}})">
+    			<div class="title">Enxaqueca</div>
+    			<div class="content">Diferencie enxaqueca de outras cefaléias</div>
+		   	</ons-card>
+		</ons-page>
+	</template>
+<!-- Página de Informações -->
+	<template id="info.html">
+		<ons-page>
+ 			<ons-toolbar>
+      			<div class="left"><ons-back-button></ons-back-button></div>
+      			<div class="center">{{ nav.topPage.data.title }}</div>
+    		</ons-toolbar>
+    		<ons-card>
+    			<div class="title">Informações</div>
+    			<div class="content">Aplicativo desenvolvido por Leonardo Canela Almeida</div>
+    			<br>
+		   	</ons-card>
+		</ons-page>
+	</template>
+<!-- Enxaqueca -->
+	<template id="enxaqueca.html">
+		<ons-page>	
+			<ons-toolbar>
+      			<div class="left"><ons-back-button></ons-back-button></div>
+      			<div class="center">{{ nav.topPage.data.title }}</div>
+    		</ons-toolbar>
+    		<div class="cont">
+        			<div class='ptp'>Probabilidade Pré-Teste: {{dados.pretest*100}}%</div>
+					    <ons-list>
+					    	<ons-list-header>Confirmar diagnóstico</ons-list-header>
+					    	<ons-list-item ng-repeat="todo in todos">
+						   		<label for="check-{{todo}}" class="center "><div>{{todo.text}} (LR = {{todo.lplus}})</div></label>
+						    	<div class="right"><ons-switch input-id="check-{{todo}}" ng-model="todo.done"></ons-switch></div>
+   							 </ons-list-item>
+					        <div class="result">
+					          <span>LR+ Total: {{ getTotal() }}</span>
+					          <br>
+					          <span>Probabilidade Pós-teste: {{ getPost() }}%</span>
+					        </div>
+						</ons-list>
+						<ons-bottom-toolbar>
  
+					          <span>LR+ Total: {{ getTotal() }}</span>
+					          <br>
+					          <span>Probabilidade Pós-teste: {{ getPost() }}%</span>
+</ons-bottom-toolbar>
+		</ons-page>
+	</template>
+	<!-- meu js -->
+	<script src="js/app.js"></script>
+	</body>
+</html>
