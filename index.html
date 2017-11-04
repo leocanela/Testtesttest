@@ -61,7 +61,7 @@
       			<div class="center">{{ nav.topPage.data.title }}</div>
     		</ons-toolbar>
     		<div class="cont">
-        			<div class='ptp'>Probabilidade Pré-Teste: {{nav.topPage.data.ppp*100}}%</div>
+    			<ons-button modifier="quiet large">Probabilidade Pré-Teste: {{dados.pretest*100}}%</ons-button>
 					    <ons-list>
 					    	<ons-list-header>Confirmar diagnóstico</ons-list-header>
 					    	<ons-list-item ng-repeat="todo in todos">
@@ -69,10 +69,8 @@
 						    	<div class="right"><ons-switch input-id="check-{{todo}}" ng-model="todo.done"></ons-switch></div>
    							 </ons-list-item>
 						</ons-list>
-						<ons-bottom-toolbar style="height: 8%;">
-				          <br>
-				          <span>Probabilidade Pós-teste: {{ getPost()  | number: 1 }}%</span>
-				          <br>
+						<ons-bottom-toolbar>
+				          <div class="toolbar__center" style="font-size: 1.2em">Probabilidade Pós-teste: <b>{{ getPost() | number:1}}%</b></div>
 						</ons-bottom-toolbar>
 		</ons-page>
 	</template>
@@ -84,7 +82,7 @@
       			<div class="center">{{ nav.topPage.data.title }}</div>
     		</ons-toolbar>
     		<div class="cont">
-        			<div class='ptp'>Probabilidade Pré-Teste: {{dados.drgepretest*100}}%</div>
+        			<ons-button modifier="quiet large">Probabilidade Pré-Teste: {{dados.drgepretest*100}}%</ons-button>
 					    <ons-list>
 					    	<ons-list-header>Confirmar diagnóstico</ons-list-header>
 					    	<ons-list-item ng-repeat="item in drge">
@@ -92,10 +90,8 @@
 						    	<div class="right"><ons-switch input-id="check-{{item}}" ng-model="item.done"></ons-switch></div>
    							 </ons-list-item>
 						</ons-list>
-						<ons-bottom-toolbar style="height: 8%;">
-				          <br>
-				          <span>Probabilidade Pós-teste: {{ drgePost() | number:1}}%</span>
-				          <br>
+						<ons-bottom-toolbar>
+				          <div class="toolbar__center" style="font-size: 1.2em">Probabilidade Pós-teste: <b>{{ drgePost() | number:1}}%</b></div>
 						</ons-bottom-toolbar>
 		</ons-page>
 	</template>
@@ -141,7 +137,7 @@
 						</ons-list>
 						<ons-bottom-toolbar style="height: 8%;">
 				          <br>
-				          <span>Probabilidade Pós-teste: {{ drgePost() | number:1}}%</span>
+				          <span style="font-size: 2em">Probabilidade Pós-teste: {{ drgePost() | number:1}}%</span>
 				          <br>
 						</ons-bottom-toolbar>
 		</ons-page>
