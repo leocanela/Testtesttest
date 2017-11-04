@@ -33,10 +33,10 @@
           		</div>
 			</ons-toolbar>
 			<!-- Lista de doenças -->
-			<ons-card ng-click="nav.pushPage('enxaqueca.html', {data: {title: 'Enxaqueca'}})">
-    			<div class="title">Enxaqueca</div>
-    			<div class="content">Diferencie enxaqueca de outras cefaléias</div>
-		   	</ons-card>
+		   		<ons-card ng-repeat="doenca in doencas track by $index" ng-click="irpara($index)">
+    				<div class="title">{{doenca.nome}}</div>
+    				<div class="content">{{doenca.desc}}</div>
+		   		</ons-card>
 		</ons-page>
 	</template>
 <!-- Página de Informações -->
@@ -54,32 +54,96 @@
 		</ons-page>
 	</template>
 <!-- Enxaqueca -->
-	<template id="enxaqueca.html">
+	<template id="Enxaqueca.html">
 		<ons-page>	
 			<ons-toolbar>
       			<div class="left"><ons-back-button></ons-back-button></div>
       			<div class="center">{{ nav.topPage.data.title }}</div>
     		</ons-toolbar>
     		<div class="cont">
-        			<div class='ptp'>Probabilidade Pré-Teste: {{dados.pretest*100}}%</div>
+        			<div class='ptp'>Probabilidade Pré-Teste: {{nav.topPage.data.ppp*100}}%</div>
 					    <ons-list>
 					    	<ons-list-header>Confirmar diagnóstico</ons-list-header>
 					    	<ons-list-item ng-repeat="todo in todos">
 						   		<label for="check-{{todo}}" class="center "><div>{{todo.text}} (LR = {{todo.lplus}})</div></label>
 						    	<div class="right"><ons-switch input-id="check-{{todo}}" ng-model="todo.done"></ons-switch></div>
    							 </ons-list-item>
-					        <div class="result">
-					          <span>LR+ Total: {{ getTotal() }}</span>
-					          <br>
-					          <span>Probabilidade Pós-teste: {{ getPost() }}%</span>
-					        </div>
 						</ons-list>
-						<ons-bottom-toolbar>
- 
-					          <span>LR+ Total: {{ getTotal() }}</span>
-					          <br>
-					          <span>Probabilidade Pós-teste: {{ getPost() }}%</span>
-</ons-bottom-toolbar>
+						<ons-bottom-toolbar style="height: 8%;">
+				          <br>
+				          <span>Probabilidade Pós-teste: {{ getPost()  | number: 1 }}%</span>
+				          <br>
+						</ons-bottom-toolbar>
+		</ons-page>
+	</template>
+<!-- DRGE -->
+	<template id="DRGE.html">
+		<ons-page>	
+			<ons-toolbar>
+      			<div class="left"><ons-back-button></ons-back-button></div>
+      			<div class="center">{{ nav.topPage.data.title }}</div>
+    		</ons-toolbar>
+    		<div class="cont">
+        			<div class='ptp'>Probabilidade Pré-Teste: {{dados.drgepretest*100}}%</div>
+					    <ons-list>
+					    	<ons-list-header>Confirmar diagnóstico</ons-list-header>
+					    	<ons-list-item ng-repeat="item in drge">
+						   		<label for="check-{{item}}" class="center "><div>{{item.text}} (LR = {{item.lplus}})</div></label>
+						    	<div class="right"><ons-switch input-id="check-{{item}}" ng-model="item.done"></ons-switch></div>
+   							 </ons-list-item>
+						</ons-list>
+						<ons-bottom-toolbar style="height: 8%;">
+				          <br>
+				          <span>Probabilidade Pós-teste: {{ drgePost() | number:1}}%</span>
+				          <br>
+						</ons-bottom-toolbar>
+		</ons-page>
+	</template>
+<!-- ITU -->
+<template id="ITU.html">
+		<ons-page>	
+			<ons-toolbar>
+      			<div class="left"><ons-back-button></ons-back-button></div>
+      			<div class="center">{{ nav.topPage.data.title }}</div>
+    		</ons-toolbar>
+    		<div class="cont">
+        			<div class='ptp'>ITUITUITU: {{dados.drgepretest*100}}%</div>
+					    <ons-list>
+					    	<ons-list-header>Confirmar diagnóstico</ons-list-header>
+					    	<ons-list-item ng-repeat="item in drge">
+						   		<label for="check-{{item}}" class="center "><div>{{item.text}} (LR = {{item.lplus}})</div></label>
+						    	<div class="right"><ons-switch input-id="check-{{item}}" ng-model="item.done"></ons-switch></div>
+   							 </ons-list-item>
+						</ons-list>
+						<ons-bottom-toolbar style="height: 8%;">
+				          <br>
+				          <span>Probabilidade Pós-teste: {{ drgePost() | number:1}}%</span>
+				          <br>
+						</ons-bottom-toolbar>
+		</ons-page>
+	</template>
+
+
+<template id="Teste.html">
+		<ons-page>	
+			<ons-toolbar>
+      			<div class="left"><ons-back-button></ons-back-button></div>
+      			<div class="center">{{ nav.topPage.data.title }}</div>
+    		</ons-toolbar>
+    		<div class="cont">
+        			<div class='ptp'>TESTESTESTES: {{dados.drgepretest*100}}%</div>
+					    <ons-list>
+					    	<ons-list-header>Confirmar diagnóstico</ons-list-header>
+					    	<ons-list-item ng-repeat="item in drge">
+						   		<label for="check-{{item}}" class="center "><div>{{item.text}} (LR = {{item.lplus}})</div></label>
+						    	<div class="right"><ons-switch input-id="check-{{item}}" ng-model="item.done"></ons-switch></div>
+   							 </ons-list-item>
+						</ons-list>
+						<ons-bottom-toolbar style="height: 8%;">
+				          <br>
+				          <span>Probabilidade Pós-teste: {{ drgePost() | number:1}}%</span>
+				          <br>
+						</ons-bottom-toolbar>
 		</ons-page>
 	</template>
 	<!-- meu js -->
