@@ -96,25 +96,23 @@
 		</ons-page>
 	</template>
 <!-- ITU -->
-<template id="ITU.html">
+<template id="{{doencas[2].nome}}.html">
 		<ons-page>	
 			<ons-toolbar>
       			<div class="left"><ons-back-button></ons-back-button></div>
       			<div class="center">{{ nav.topPage.data.title }}</div>
     		</ons-toolbar>
     		<div class="cont">
-        			<div class='ptp'>ITUITUITU: {{dados.drgepretest*100}}%</div>
+        			<ons-button modifier="quiet large">Probabilidade Pré-Teste: {{dados.itupretest*100}}%</ons-button>
 					    <ons-list>
 					    	<ons-list-header>Confirmar diagnóstico</ons-list-header>
-					    	<ons-list-item ng-repeat="item in drge">
+					    	<ons-list-item ng-repeat="item in itu">
 						   		<label for="check-{{item}}" class="center "><div>{{item.text}} (LR = {{item.lplus}})</div></label>
 						    	<div class="right"><ons-switch input-id="check-{{item}}" ng-model="item.done"></ons-switch></div>
    							 </ons-list-item>
 						</ons-list>
-						<ons-bottom-toolbar style="height: 8%;">
-				          <br>
-				          <span>Probabilidade Pós-teste: {{ drgePost() | number:1}}%</span>
-				          <br>
+						<ons-bottom-toolbar>
+				          <div class="toolbar__center" style="font-size: 1.2em">Probabilidade Pós-teste: <b>{{ ituPost() | number:1}}%</b></div>
 						</ons-bottom-toolbar>
 		</ons-page>
 	</template>

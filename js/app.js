@@ -4,7 +4,8 @@
 // Quero apagar isto
   $scope.dados = {
     pretest: 0.1,
-    drgepretest: 0.38
+    drgepretest: 0.38,
+    itupretest: 0.48,
   };
 
 // Navegação pela lista de doenças
@@ -22,7 +23,11 @@ $scope.irpara = function($index) {
       nome: 'DRGE',
       desc: 'Diagnóstico clínico e exames complementares',
       pt: 0.38
-    }, 
+    }, {
+    	nome: 'ITU',
+    	desc: 'Diagnóstico clínico de ITU',
+    	pt: 0.48
+    } 
   ];
 //LRs de Enxaqueca
   $scope.todos = [{
@@ -68,6 +73,23 @@ $scope.irpara = function($index) {
     }
   ];
 
+  //LRs de ITU
+   $scope.itu = [{
+      text: 'Disúria e urgência',
+      done: false,
+      lplus: 3.47
+    }, {
+      text: 'Ausência de corrimento vaginal',
+      done: false,
+      lplus: 21.3
+    }, {
+      text: 'Nitrito',
+      done: false,
+      lplus: 10
+    }, 
+  ];
+$scope.nomepag = "ITU";
+
 //Calcula Posttest de Enxaqueca
   $scope.getPost = function() {
     var total = 0;
@@ -93,6 +115,21 @@ $scope.irpara = function($index) {
         var product = $scope.drge[i];
         total += (product.lplus);
         pretest = $scope.dados.drgepretest / (1 - $scope.dados.drgepretest);
+        pto = pretest * total;
+        posttest = pto / (1 + pto);
+      }
+    }
+    return posttest*100;
+  }
+
+  $scope.ituPost = function() {
+    var total = 0;
+    var posttest = $scope.dados.itupretest
+    for (var i = 0; i < $scope.itu.length; i++) {
+      if ($scope.itu[i].done === true) {
+        var product = $scope.itu[i];
+        total += (product.lplus);
+        pretest = $scope.dados.itupretest / (1 - $scope.dados.itupretest);
         pto = pretest * total;
         posttest = pto / (1 + pto);
       }
