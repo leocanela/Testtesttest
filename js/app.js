@@ -75,7 +75,7 @@ $scope.tudo = [{
       ]}
 
 
-      }]
+      ]
 
       $scope.paginaatual = {};
 
