@@ -82,8 +82,7 @@ $scope.tudo = [{
 // Navegação pela lista de doenças
 $scope.irpara = function($index) {
   $scope.paginaatual = $scope.tudo[$index].nomepag
-  console.log($scope.tudo[$index].nomepag);
-  nav.pushPage($scope.tudo[$index].nomepag+'.html', {data: {title: $scope.tudo[$index].nomedoenca}})
+  nav.pushPage($scope.tudo[$index].nomepag+'.html')
   $scope.paginaatual = {
     nomepag: $scope.tudo[$index].nomepag, 
     nomedoenca: $scope.tudo[$index].nomedoenca,
